@@ -1,0 +1,2 @@
+"""GitHub account domain module."""
+

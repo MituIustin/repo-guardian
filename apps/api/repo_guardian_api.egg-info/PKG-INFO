@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: repo-guardian-api
+Version: 0.1.0
+Summary: Backend API for Repo Guardian
+Requires-Python: <3.13,>=3.12
+Requires-Dist: alembic==1.15.2
+Requires-Dist: asyncpg==0.30.0
+Requires-Dist: cryptography==45.0.4
+Requires-Dist: fastapi==0.115.12
+Requires-Dist: httpx==0.28.1
+Requires-Dist: itsdangerous==2.2.0
+Requires-Dist: pydantic-settings==2.9.1
+Requires-Dist: sqlalchemy==2.0.41
+Requires-Dist: uvicorn[standard]==0.34.2
+Provides-Extra: dev
+Requires-Dist: pytest==8.3.5; extra == "dev"
+Requires-Dist: pytest-asyncio==0.26.0; extra == "dev"
+Requires-Dist: ruff==0.11.10; extra == "dev"

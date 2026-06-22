@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repo-guardian-api"
+version = "0.1.0"
+description = "Backend API for Repo Guardian"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "alembic==1.15.2",
+  "asyncpg==0.30.0",
+  "cryptography==45.0.4",
+  "fastapi==0.115.12",
+  "httpx==0.28.1",
+  "itsdangerous==2.2.0",
+  "pydantic-settings==2.9.1",
+  "sqlalchemy==2.0.41",
+  "uvicorn[standard]==0.34.2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.3.5",
+  "pytest-asyncio==0.26.0",
+  "ruff==0.11.10",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+markers = ["integration: requires a dedicated PostgreSQL test database"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

@@ -1,0 +1,1 @@
+"""Signed GitHub webhook ingestion."""
